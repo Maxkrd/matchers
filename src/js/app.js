@@ -1,9 +1,3 @@
-export default function showHealth(person) {
-  if (person.health >= 50) {
-    return 'healthy';
-  }
-  if (person.health < 50 && person.health >= 15) {
-    return 'wounded';
-  }
-  return 'critical';
+export default function sortHeroes(heroes) {
+  return heroes.sort((a, b) => b.health - a.health);
 }

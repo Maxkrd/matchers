@@ -1,16 +1,18 @@
-import showHealth from '../app';
+import sortHeroes from '../app';
 
-test('testing healthy', () => {
-  const health = showHealth({ name: 'Маг', health: 90 });
-  expect(health).toBe('healthy');
-});
+const heroes = [
+  { name: 'мечник', health: 10 },
+  { name: 'маг', health: 100 },
+  { name: 'лучник', health: 80 },
+];
 
-test('testing wounded', () => {
-  const health = showHealth({ name: 'Лучник', health: 40 });
-  expect(health).toBe('wounded');
-});
+const heroesSorted = [
+  { name: 'маг', health: 100 },
+  { name: 'лучник', health: 80 },
+  { name: 'мечник', health: 10 },
+];
 
-test('testing critical', () => {
-  const health = showHealth({ name: 'Мечник', health: 10 });
-  expect(health).toBe('critical');
+test('sorting Persons', () => {
+  const heroesNew = sortHeroes(heroes);
+  expect(heroesNew).toEqual(heroesSorted);
 });
